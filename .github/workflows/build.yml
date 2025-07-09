@@ -20,7 +20,7 @@ jobs:
       - name: build c code
         run: bash ./compile
       - name: build hs code
-        run: cabal build
+        run: cabal build --allow-newer=base
       - name: archive
         run: tar cf freearc.tar .
       - uses: actions/upload-artifact@v4
