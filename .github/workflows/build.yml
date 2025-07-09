@@ -22,7 +22,7 @@ jobs:
       - name: build hs code
         run: |
           cabal update > /dev/null
-          cabal build
+          cabal build --enable-executable-static
       - name: archive
         run: tar cf freearc.tar .
       - uses: actions/upload-artifact@v4
