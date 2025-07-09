@@ -4,7 +4,7 @@ name: build
 jobs:
   build:
     name: compile
-    runs-on: ubuntu-latest # or macOS-latest, or windows-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - name: Install cURL-dev
@@ -22,7 +22,7 @@ jobs:
       - name: build hs code
         run: |
           cabal update > /dev/null
-          cabal build --enable-executable-static
+          cabal build
       - name: archive
         run: tar cf freearc.tar .
       - uses: actions/upload-artifact@v4
