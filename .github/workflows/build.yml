@@ -15,14 +15,14 @@ jobs:
       - name: setup haskell
         uses: haskell-actions/setup@v2
         with:
-          ghc_version: 9.6.1
+          ghc-version: 9.4.1
           enable-stack: false
       - name: build c code
         run: bash ./compile
       - name: build hs code
         run: |
           cabal update
-          cabal build --allow-newer=base
+          cabal build
       - name: archive
         run: tar cf freearc.tar .
       - uses: actions/upload-artifact@v4
