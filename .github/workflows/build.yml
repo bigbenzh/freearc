@@ -7,8 +7,10 @@ jobs:
     runs-on: ubuntu-latest # or macOS-latest, or windows-latest
     steps:
       - uses: actions/checkout@v4
-      - name: setup libcurl-dev
-        run: sudo apt-get install libcurl-dev -y
+      - name: Install cURL Headers
+        run: curl https://curl.haxx.se/download/curl-$V.tar.gz | sudo tar xz -C /usr --strip-components=1 curl-$V/include
+        env:
+          V: 7.58.0
       - name: Set up Clang
         uses: egor-tensin/setup-clang@v1
       - name: setup haskell
