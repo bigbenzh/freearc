@@ -15,6 +15,7 @@ jobs:
       - name: setup haskell
         uses: haskell-actions/setup@v2
         with:
+          ghc_version: 9.6.1
           enable-stack: false
       - name: build c code
         run: bash ./compile
