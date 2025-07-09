@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest # or macOS-latest, or windows-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install cURL Headers
-        run: curl https://curl.se/download/curl-8.14.1.tar.gz | sudo tar xz -C /usr --strip-components=1 curl-8.14.1/include
+      - name: Install cURL-dev
+        run: apt-get install libcurl4-openssl-dev -y
 
       - name: Set up Clang
         uses: egor-tensin/setup-clang@v1
