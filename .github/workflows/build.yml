@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install cURL-dev
-        run: apt-get install libcurl4-openssl-dev -y
+        run: sudo apt-get install libcurl4-openssl-dev -y
 
       - name: Set up Clang
         uses: egor-tensin/setup-clang@v1
